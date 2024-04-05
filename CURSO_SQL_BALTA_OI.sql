@@ -21,7 +21,7 @@ CREATE TABLE TB_CURSO(
        CategoriaId INT NOT NULL,
        
        CONSTRAINT PK_CURSO PRIMARY KEY (Id),
-       CONSTRAINT FK_CURSO_CATEGORIA FOREIGN KEY (CategoriaId) REFERENCES TB_CATEGORIA(Id) --so pode ser criada, quando a TB_CATEGORIA existir.
+       CONSTRAINT FK_CURSO_CATEGORIA FOREIGN KEY (CategoriaId) REFERENCES TB_CATEGORIA(Id)); --so pode ser criada, quando a TB_CATEGORIA existir.
 );
 
 --CONCLUSÃO/PROGRESSO
