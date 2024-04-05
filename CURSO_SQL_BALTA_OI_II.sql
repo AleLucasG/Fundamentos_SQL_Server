@@ -1,6 +1,6 @@
 
 
-DROP TABLE TB_CURSO;
+--DROP TABLE TB_CURSO;
 
 -- 1º Crie a sequência
 CREATE SEQUENCE categoria_seq
@@ -35,8 +35,6 @@ INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Angular', 22);
 INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Flutter', 23);
 INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Windows Form', 24);
 
-
--- FORMAS DE RETORNO DE UMA TABELA
        
 SELECT * FROM TB_CURSO
 WHERE ROWNUM <= 2;
@@ -46,4 +44,6 @@ SELECT * FROM (
     SELECT * FROM TB_CURSO ORDER BY Nome
 ) WHERE ROWNUM <= 2;
 
+--OU
+SELECT DISTINCT NOME FROM TB_CATEGORIA;
 
