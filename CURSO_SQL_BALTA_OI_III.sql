@@ -68,6 +68,7 @@ INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Fundamentos C#', 1);
 INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Fundamentos OOP', 1);
 INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Angular', 2);
 INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Flutter', 3);
+INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Flutter e SQLIte', 3);
 
 
 SELECT * FROM TB_CURSO;
