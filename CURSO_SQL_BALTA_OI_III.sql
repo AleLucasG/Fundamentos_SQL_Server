@@ -82,5 +82,5 @@ BEGIN TRANSACTION
       NOME = 'BackEnd'
   WHERE
       Id = 1
-ROLLBACK;
+COMMIT;
 
