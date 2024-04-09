@@ -72,3 +72,15 @@ INSERT INTO TB_CURSO (Nome, CategoriaId) VALUES ('Flutter e SQLIte', 3);
 
 
 SELECT * FROM TB_CURSO;
+
+--------------------------------------------------------------------
+
+BEGIN TRANSACTION
+  UPDATE 
+      TB_CATEGORIA 
+  SET 
+      NOME = 'BackEnd'
+  WHERE
+      Id = 1
+ROLLBACK;
+
