@@ -83,4 +83,16 @@ BEGIN TRANSACTION
   WHERE
       Id = 1
 COMMIT;
+--------------------------------------------------------------------
+
+DELETE FROM
+    TB_CURSO
+WHERE
+     CategoriaId = 3
+
+DELETE FROM
+    TB_CATEGORIA 
+WHERE
+     Id = 3
+
 
