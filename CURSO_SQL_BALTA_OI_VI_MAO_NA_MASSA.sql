@@ -1,7 +1,8 @@
  ----- EXECUÇÃO NO PL/SQL DEVELOPER
  
- 
- --Iniciando o banco
+ ------------------------------------------------------
+ ----------------- Iniciando o banco  -----------------
+ ------------------------------------------------------
  
  -- DROP TABLE ALUNO;
 
@@ -37,28 +38,63 @@ END;
 SELECT * FROM ALUNO;
  
  
-  --Criando as tabelas - Parte 1
+ ------------------------------------------------------
+ ----------- Criando as tabelas - Parte 1  ------------
+ ------------------------------------------------------
+  
+ -- DROP TABLE AUTOR;
+
+-- 1º Crie a sequência
+CREATE SEQUENCE AUTOR_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- 2º Crie a tabela com a coluna ID utilizando a sequência
+CREATE TABLE AUTOR
+(
+ ID INT NOT NULL,
+ NOME NVARCHAR2(120) NOT NULL,
+ TITULO NVARCHAR2(80) NOT NULL,
+ IMAGEM NVARCHAR2(1024) NOT NULL,
+ BIO NVARCHAR2(2000) NOT NULL,
+ URL NVARCHAR2(450) NOT NULL,
+ EMAIL NVARCHAR2(180) NOT NULL,
+ TIPO NUMBER NOT NULL,
+
+ CONSTRAINT PK_AUTOR PRIMARY KEY (Id)
+ );
+ 
+-- 3º  Crie um gatilho para inserir automaticamente valores na coluna ID
+CREATE OR REPLACE TRIGGER TRG_AUTOR_ID
+BEFORE INSERT ON AUTOR
+FOR EACH ROW
+BEGIN
+    SELECT AUTOR_SEQ.NEXTVAL INTO :NEW.ID FROM DUAL;
+END;
+/
+
+SELECT * FROM AUTOR;
   
   
-  --Criando as tabelas - Parte 2
+ --Criando as tabelas - Parte 2
   
   
-  --Backup e Restore
+ --Backup e Restore
   
   
-  --Listando os cursos
+ --Listando os cursos
   
   
-  --Listando as carreiras
+ --Listando as carreiras
   
   
-  --Inserindo o progresso
+ --Inserindo o progresso
   
   
-  --Visualizando o progresso
+ --Visualizando o progresso
   
   
-  --Listando cursos e progressos
+ --Listando cursos e progressos
   
   
-  --Removendo uma conta
+ --Removendo uma conta
