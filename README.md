@@ -7,5 +7,16 @@ Aprenda ou consolide todos os conhecimentos necessários para trabalhar com banc
 - SQL Developer
 - NotePad++
 
-link: https://balta.io/cursos/fundamentos-sql-server
+# Mão na Massa
+ Iniciando o banco
+ Criando as tabelas - Parte 1
+ Criando as tabelas - Parte 2
+ Backup e Restore
+ Listando os cursos
+ Listando as carreiras
+ Inserindo o progresso
+ Visualizando o progresso
+ Listando cursos e progressos
+ Removendo uma conta
 
+link: https://balta.io/cursos/fundamentos-sql-server
