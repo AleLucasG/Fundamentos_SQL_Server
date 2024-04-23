@@ -20,4 +20,5 @@ Aprenda ou consolide todos os conhecimentos necessários para trabalhar com banc
 - Removendo uma conta
 
 https://balta.io/cursos/fundamentos-sql-server
+
 https://github.com/balta-io/2805
