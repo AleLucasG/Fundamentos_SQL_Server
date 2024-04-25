@@ -278,7 +278,18 @@ INSERT INTO CURSO(NOME, CATEGORIAID) VALUES('Flutter', 3)
   
  --Listando os cursos
   
-  
+ SELECT 
+		ID,
+		TAG,
+		TITULO,
+		URL,
+		SUMARIO
+   FROM
+		CURSO
+  WHERE
+		ATIVIDADE = 1
+ORDER BY DATACRIACAO;
+		
  --Listando as carreiras
   
   
