@@ -389,7 +389,24 @@ LEFT JOIN ALUNO C B.IDCURSO = C.ID;
 ----------------- Removendo uma conta -----------------
 ------------------------------------------------------- 	
 
+-- CRIAR UMA PROCEDURE
 
+SELECT 
+		B.NOME AS ALUNO,
+		C.TITULO AS CURSO,
+		A.PROGRESSO,
+		A.ULTIMAATUALIZACAO
+  FROM 
+		CURSOESTUDANTE A
+INNER JOIN ALUNO B A.IDALUNO = B.ID
+INNER JOIN CURSO C A.IDALUNO = C.ID
+WHERE
+		A.IDALUNO = '79b82071-80a8-4e78-a79c-92c8cd1fd052'
+    AND	A.PROGRESSO < 100
+    AND A.PROGRESSO > 0
+ORDER BY 
+		A.A.ULTIMAATUALIZACAO;
+	
 
 
 -------------------------------------------------------
