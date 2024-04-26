@@ -1,8 +1,8 @@
- ----- EXECUÇÃO NO PL/SQL DEVELOPER
+----- EXECUÇÃO NO PL/SQL DEVELOPER
  
- ------------------------------------------------------
- ----------------- Iniciando o banco  -----------------
- ------------------------------------------------------
+------------------------------------------------------
+----------------- Iniciando o banco  -----------------
+------------------------------------------------------
  
  -- DROP TABLE ALUNO;
 
@@ -38,9 +38,9 @@ END;
 SELECT * FROM ALUNO;
  
  
- ------------------------------------------------------
- ----------- Criando as tabelas - Parte 1  ------------
- ------------------------------------------------------
+------------------------------------------------------
+----------- Criando as tabelas - Parte 1  ------------
+------------------------------------------------------
   
  -- DROP TABLE AUTOR;
 
@@ -75,7 +75,8 @@ END;
 
 SELECT * FROM AUTOR;
 
-------
+--------------------------
+--------------------------
 
 -- DROP TABLE CARREIRA;
 
@@ -110,8 +111,8 @@ END;
 
 SELECT * FROM CARREIRA;
 
-
-------
+--------------------------
+--------------------------
 
 -- DROP TABLE CATEGORIA;
 
@@ -145,7 +146,8 @@ END;
 
 SELECT * FROM CATEGORIA;
 
-------
+--------------------------
+--------------------------
 
 -- DROP TABLE CURSO;
 
@@ -191,9 +193,9 @@ END;
 
 SELECT * FROM CURSO;
 
- ------------------------------------------------------
- ----------- Criando as tabelas - Parte 2  ------------
- ------------------------------------------------------
+------------------------------------------------------
+----------- Criando as tabelas - Parte 2  ------------
+------------------------------------------------------
  
  -- DROP TABLE ITEMCARREIRA;
 
@@ -225,9 +227,10 @@ BEGIN
 END;
 /
 
-SELECT * FROM CURSOESTUDANTE;
+SELECT * FROM ITEMCARREIRA;
 
-------
+--------------------------
+--------------------------
 
 -- DROP TABLE CURSOESTUDANTE;
 
@@ -264,7 +267,10 @@ END;
 SELECT * FROM CURSOESTUDANTE;
   
   
- --Backup e Restore
+------------------------------------------------------
+------------------ Backup e Restore ------------------
+------------------------------------------------------   
+
  
 INSERT INTO CATEGORIA(NOME) VALUES('Backend')
 INSERT INTO CATEGORIA(NOME) VALUES('Frontend')
@@ -277,8 +283,9 @@ INSERT INTO CURSO(NOME, CATEGORIAID) VALUES('Flutter', 3)
 
 ...  
   
- --Listando os cursos
-  
+------------------------------------------------------
+----------------- Listando os cursos -----------------
+------------------------------------------------------ 
   
 CREATE VIEW VW_CURSOS AS
  SELECT 
@@ -303,7 +310,10 @@ INNER JOIN
 		
 SELECT * FROM VW_CURSOS ORDER BY DATACRIACAO;
 		
- --Listando as carreiras
+		
+-------------------------------------------------------
+---------------- Listando as carreiras ----------------
+------------------------------------------------------- 		
  
  
 CREATE VIEW VW_CARREIRAS AS
@@ -322,9 +332,11 @@ GROUP BY
   
 SELECT * FROM VW_CARREIRAS ORDER BY DATACRIACAO;  
   
+ 
+-------------------------------------------------------
+---------------- Inserindo o progresso ----------------
+------------------------------------------------------- 	
   
-  
- --Inserindo o progresso
  
 INSERT INTO ESTUDANTE VALUES ('79b82071-80a8-4e78-a79c-92c8cd1fd052','André Baltieri','hello@balta.io','12345678901','12345678', NULL, NOW())
 INSERT INTO ESTUDANTE VALUES ('c55390d4-71dd-4f3c-b978-d1582f51a327','André Baltieri','hello@balta.io','12345678901','11999999999', NULL, NOW())
@@ -333,9 +345,10 @@ INSERT INTO CURSOESTUDANTE VALUES ('5f5a33f8-4ff3-7e10-cc6e-3fa000000000','79b82
 INSERT INTO CURSOESTUDANTE VALUES ('5d8cf396-e717-9a02-2443-021b00000000','c55390d4-71dd-4f3c-b978-d1582f51a327',50,0,'2021-01-15 12:35:54', NOW())
   
   
-  
- --Visualizando o progresso
- 
+-------------------------------------------------------
+-------------- Visualizando o progresso ---------------
+------------------------------------------------------- 	 
+
  
 CREATE VIEW VW_CURSOESTUDANTE AS 
 SELECT 
@@ -345,8 +358,8 @@ SELECT
 		A.ULTIMAATUALIZACAO
   FROM 
 		CURSOESTUDANTE A
-INNER JOIN ALUNO B A.ID = B.ID
-INNER JOIN CURSO C A.ID = C.ID
+INNER JOIN ALUNO B A.IDALUNO = B.ID
+INNER JOIN CURSO C A.IDALUNO = C.ID
 WHERE
 		A.IDALUNO = '79b82071-80a8-4e78-a79c-92c8cd1fd052'
     AND	A.PROGRESSO < 100
@@ -356,10 +369,29 @@ WHERE
 SELECT * FROM VW_CURSOESTUDANTE ORDER BY DATACRIACAO;  
 	
 	
+-------------------------------------------------------
+------------- Listando cursos e progressos ------------
+------------------------------------------------------- 	
 	
- --Listando cursos e progressos
  
- 
+ SELECT 
+ 		A.TITULO AS CURSO,
+		C.NOME AS ALUNO,
+		B.PROGRESSO,
+		B.ULTIMAATUALIZACAO
+  FROM 
+		CURSO A
+LEFT JOIN CURSOESTUDANTE B A.IDCURSO= A.ID
+LEFT JOIN ALUNO C B.IDCURSO = C.ID;
   
-  
- --Removendo uma conta
+
+-------------------------------------------------------
+----------------- Removendo uma conta -----------------
+------------------------------------------------------- 	
+
+
+
+
+-------------------------------------------------------
+------- PARABÉNS!!! VOCÊ CONCLUIU O CURSO (  ) --------
+------------------------------------------------------- 	
