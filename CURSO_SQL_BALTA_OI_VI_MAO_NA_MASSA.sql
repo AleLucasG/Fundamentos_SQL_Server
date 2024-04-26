@@ -308,18 +308,40 @@ INNER JOIN
 		
 		
 		
-SELECT * FROM VW _CURSOS ORDER BY DATACRIACAO,
+SELECT * FROM VW_CURSOS ORDER BY DATACRIACAO;
 		
  --Listando as carreiras
+ 
+ 
+CREATE VIEW  VW_CARREIRAS AS
+ SELECT
+		A.ID,
+		A.TITULO,
+		A.URL,
+		COUNT(ID) AS CURSOS
+  FROM
+		CARREIRA A
+INNER JOIN ITEM_CARREIRA B ON B.IDCARREIRA = A.ID
+GROUP BY 
+		A.ID,
+		A.TITULO,
+		A.URL;
   
+SELECT * FROM VW_CARREIRAS ORDER BY DATACRIACAO;  
   
  --Inserindo o progresso
+ 
+ 
   
   
  --Visualizando o progresso
+ 
+ 
   
   
  --Listando cursos e progressos
+ 
+ 
   
   
  --Removendo uma conta
