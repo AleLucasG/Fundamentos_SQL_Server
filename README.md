@@ -1,13 +1,13 @@
-# Fundamentos do SQL Server - Balta.IO
+<h1> Fundamentos do SQL Server - Balta.IO </h1> 
 
-# Neste curso de Orientação à Objetos (OOP) eu aprendi...
-Aprenda ou consolide todos os conhecimentos necessários para trabalhar com bancos de dados relacionais tendo o SQL Server como referência.
+### Neste curso de Orientação à Objetos (OOP) eu aprendi...
+> Aprenda ou consolide todos os conhecimentos necessários para trabalhar com bancos de dados relacionais tendo o SQL Server como referência.
 
-# Tecnologias usadas
+### Tecnologias usadas
 - SQL Developer
 - NotePad++
 
-# Mão na Massa
+### Mão na Massa 
 - Iniciando o banco
 - Criando as tabelas - Parte 1
 - Criando as tabelas - Parte 2
@@ -17,8 +17,9 @@ Aprenda ou consolide todos os conhecimentos necessários para trabalhar com banc
 - Inserindo o progresso
 - Visualizando o progresso
 - Listando cursos e progressos
-- Removendo uma conta
+- Removendo uma conta.
 
-https://balta.io/cursos/fundamentos-sql-server
 
-https://github.com/balta-io/2805
+Link: https://balta.io/cursos/fundamentos-sql-server
+
+Link: https://github.com/balta-io/2805
